@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Todoey
 //
-//  Created by Ömer Yılmaz on 25.06.2024.
+//  Created by Ömer Yılmaz on 25.05.2024.
 //
 
 import UIKit

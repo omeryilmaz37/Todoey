@@ -8,14 +8,11 @@
 
 import UIKit
 import RealmSwift
-import ChameleonFramework
 
 class CategoryViewController: SwipeTableViewController {
     
     let realm = try! Realm()
     
-    // Potential namespace clash with OpaquePointer (same name of Category)
-    // Use correct type from dropdown or add backticks to fix e.g., var categories = [`Category`]()
     var categories: Results<Category>?
     
     override func viewDidLoad() {
@@ -28,7 +25,7 @@ class CategoryViewController: SwipeTableViewController {
     override func viewWillAppear(_ animated: Bool) {
         guard let navBar = navigationController?.navigationBar else { fatalError("Navigation controller does not exist.")
         }
-        navBar.backgroundColor = UIColor(hexString: "#1D9BF6")
+        navBar.backgroundColor = .green // TODO: eski framework
     }
     
     //Mark: - Tableview Datasource Methods
@@ -42,9 +39,8 @@ class CategoryViewController: SwipeTableViewController {
         cell.textLabel?.text = categories?[indexPath.row].name ?? "No Categories added yet"
         
         if let category = categories?[indexPath.row] {
-            guard let categoryColour = UIColor(hexString: category.colour) else {fatalError()}
-            cell.backgroundColor = categoryColour
-            cell.textLabel?.textColor = ContrastColorOf(categoryColour, returnFlat: true)
+            cell.backgroundColor = .green // TODO: eski framework
+            cell.textLabel?.textColor = .green // TODO: eski framework
         }
         return cell
     }
@@ -89,7 +85,7 @@ class CategoryViewController: SwipeTableViewController {
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             let newCategory = Category()
             newCategory.name = textField.text!
-            newCategory.colour = UIColor.randomFlat().hexValue()
+            newCategory.colour = "HG3412"
             self.save(category: newCategory)
         }
         

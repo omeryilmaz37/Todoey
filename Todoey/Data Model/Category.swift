@@ -1,7 +1,6 @@
 //
 //  Category.swift
 //  
-//
 //  Todoey
 //
 //  Created by Ömer Yılmaz on 3.06.2024.

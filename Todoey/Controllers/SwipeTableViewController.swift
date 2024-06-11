@@ -36,10 +36,7 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
             self.updateModel(at: indexPath)
             
         }
-        
-        // customize the action appearance
         deleteAction.image = UIImage(named: "delete-icon")
-        
         return [deleteAction]
     }
     
@@ -52,7 +49,6 @@ class SwipeTableViewController: UITableViewController, SwipeTableViewCellDelegat
     }
     
     func updateModel(at indexPath: IndexPath) {
-        // Update our data model
     }
     
     
